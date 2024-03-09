@@ -25,7 +25,7 @@ sudo systemctl enable apache2
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 
-echo Secure MariaDB installation
+#echo Secure MariaDB installation
 echo -e "\e[33mRemember this password that you create later \e[0m"
 sudo mysql_secure_installation
 
