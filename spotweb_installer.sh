@@ -88,7 +88,7 @@ echo -e "\e[32msudo mv /tmp/dbsettings.inc.php /var/www/html/spotweb \e[0m"
 echo or type:
 echo -e "\e[32m ./move.sh \e[0m"
 echo
-echo To setup crontab for every 30 min. type:
+echo To setup a crontab to update the database for every 30 min. type:
 echo -e "\e[32m ./auto_update \e[0m"
 echo
 echo phpMyAdmin 
