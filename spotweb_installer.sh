@@ -13,7 +13,7 @@ apt install sudo -y
 sudo apt install -y apache2 mariadb-server php php-mysql php-curl php-gd php-pear php-intl php-mbstring php-zip libapache2-mod-php openssl
 
 # Generate a self-signed SSL certificate
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
 
 # Configure Apache to use the SSL certificate
 a2enmod ssl
