@@ -4,7 +4,7 @@ IP_ADDRESS=$(hostname -I | awk '{print $1}')
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 dpkg-reconfigure tzdata
-apt install && apt dist-upgrade -y
+apt update && apt dist-upgrade -y
 
 # Install Sudo
 apt install sudo -y
