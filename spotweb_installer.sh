@@ -9,10 +9,17 @@ apt update && apt dist-upgrade -y
 # Install Sudo
 apt install sudo -y
 
-# Install Apache, MariaDB en PHP
-sudo apt install -y apache2 mariadb-server php php-mysql php-curl php-gd php-pear php-intl php-mbstring php-zip
+# Install Apache, MariaDB, PHP and openssl
+sudo apt install -y apache2 mariadb-server php php-mysql php-curl php-gd php-pear php-intl php-mbstring php-zip libapache2-mod-php openssl
 
-# Start en activeer Apache en MariaDB
+# Generate a self-signed SSL certificate
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+
+# Configure Apache to use the SSL certificate
+a2enmod ssl
+a2ensite default-ssl
+
+# Start and activate Apache en MariaDB
 sudo systemctl start apache2
 sudo systemctl enable apache2
 sudo systemctl start mariadb
