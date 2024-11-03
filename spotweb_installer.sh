@@ -66,7 +66,7 @@ EOF
 cat <<EOF > "$SCRIPT_DIR/auto_update.sh"
 <?php
 # Add cron-job
-(crontab -l ; echo "*/30 * * * * cd /var/www/spotweb && php retrieve.php") | crontab -
+(crontab -l ; echo "*/30 * * * * cd /var/www/html/spotweb && php retrieve.php") | crontab -
 echo A cron-job is created. Spotweb database refresh every 30 min.
 EOF
 
